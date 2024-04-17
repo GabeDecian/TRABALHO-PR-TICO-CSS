@@ -24,7 +24,7 @@ TARGET = all_tests.out
 SRC_FILES=\
   $(UNITY_ROOT)/src/unity.c \
   $(UNITY_ROOT)/extras/fixture/src/unity_fixture.c \
-  src/foo.c \
+  src/sort.c \
   test/Test.c \
   test/test_runners/Test_Runner.c \
   test/test_runners/all_tests.c
@@ -36,7 +36,7 @@ compile:
 	$(GCC_COMPILER) $(CFLAGS) $(INC_DIRS) $(SRC_FILES) -o $(TARGET)
 
 cppcheck:
-	cppcheck --enable=all --suppress=missingIncludeSystem --suppress=unusedFunction $(INC_DIRS) src/foo.c
+	cppcheck --enable=all --suppress=missingIncludeSystem --suppress=unusedFunction $(INC_DIRS) src/sort.c
 
 valgrind:
 	$(GCC_COMPILER) -g -Wall -Wfatal-errors $(INC_DIRS) $(SRC_FILES) -o $(TARGET)
@@ -49,7 +49,7 @@ sanitizer:
 cov:
 	$(GCC_COMPILER) $(CFLAGS) -fprofile-arcs -ftest-coverage $(INC_DIRS) $(SRC_FILES) -o $(TARGET)
 	./$(TARGET) -v
-	gcov -b foo.c
+	gcov -b sort.c
 
 run:
 	./$(TARGET) -v
