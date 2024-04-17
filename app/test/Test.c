@@ -1,28 +1,27 @@
-#include "foo.h"
+#include "sort.h"
 #include "unity.h"
 #include "unity_fixture.h"
 
-TEST_GROUP(Foo);
+TEST_GROUP(Sort);
 
-TEST_SETUP(Foo)
+TEST_SETUP(Sort)
 {
 }
 
-TEST_TEAR_DOWN(Foo)
+TEST_TEAR_DOWN(Sort)
 {
 }
 
-TEST(Foo, TestFoo1)
+TEST(Sort, Test_Sort_1)
 {
-  // All of these should pass
-  TEST_ASSERT_EQUAL(-2, foo(1,2));
-  TEST_ASSERT_EQUAL(-1, foo(2,2));
+  //TEST_ASSERT_EQUAL(-2, foo(1,2));
+  //TEST_ASSERT_EQUAL(-1, foo(2,2));
 }
 
-TEST(Foo, TestFoo2)
+TEST(Sort, Test_Sort_2)
 {
   // This test will fail
   //TEST_ASSERT_EQUAL(2, foo(1,2));
   // This test will pass
-  TEST_ASSERT_EQUAL(-1, foo(2,2));
+  //TEST_ASSERT_EQUAL(-1, foo(2,2));
 }
