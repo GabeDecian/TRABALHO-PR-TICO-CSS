@@ -12,9 +12,9 @@ TEST_TEAR_DOWN(Sort)
 {
 }
 
-char On[] = On;
-char On2[] = On2;
-char Onlogn[] = Onlogn;
+char On[] = "On";
+char On2[] = "On2";
+char Onlogn[] = "Onlogn";
 
 int vetor0[20] = {0};
 int vetor1[30] = {1,2,7,3,7,8,2,9,2,29,19,3,12,4,3,3,2,123,8,129,419,48,29,49}; //vetor maior que o permitido
