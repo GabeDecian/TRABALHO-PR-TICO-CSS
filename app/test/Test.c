@@ -177,7 +177,7 @@ TEST(Sort, Test_Sort_3) //2
   TEST_ASSERT_EQUAL(1, sort(vetor11, 2, Onlogn, 2));
   TEST_ASSERT_EQUAL(1, sort(vetor12, 2, On, 2));
   TEST_ASSERT_EQUAL(0, sort(vetor12, 2, On2, 2));
-  TEST_ASSERT_EQUAL(1, sort(vetor12, 2, 2, Onlogn));
+  TEST_ASSERT_EQUAL(1, sort(vetor12, 2, Onlogn, 2));
   //TEST_ASSERT_EQUAL(1, sort(vetor13, On, 2));
   //TEST_ASSERT_EQUAL(1, sort(vetor13, On2, 2));
   //TEST_ASSERT_EQUAL(1, sort(vetor13, Onlogn, 2));
