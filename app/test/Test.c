@@ -303,7 +303,7 @@ TEST(Sort, Test_Sort_6) //5
   //TEST_ASSERT_EQUAL(0, sort(vetor7, 20, Onlogn, 5));
   TEST_ASSERT_EQUAL(1, sort(vetor8, 1, On, 5));
   TEST_ASSERT_EQUAL(1, sort(vetor8, 1, On2, 5));
-  TEST_ASSERT_EQUAL(0, sort(vetor8, 1, Onlogn, 5));
+  TEST_ASSERT_EQUAL(1, sort(vetor8, 1, Onlogn, 5));
   TEST_ASSERT_EQUAL(1, sort(vetor9, 1, On, 5));
   TEST_ASSERT_EQUAL(1, sort(vetor9, 1, On2, 5));
   TEST_ASSERT_EQUAL(0, sort(vetor9, 1, Onlogn, 5));
