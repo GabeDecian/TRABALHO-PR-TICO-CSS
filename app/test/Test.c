@@ -102,9 +102,9 @@ TEST(Sort, Test_Sort_2) //1
   TEST_ASSERT_EQUAL(0, sort(vetor2, 20, On, 1));
   TEST_ASSERT_EQUAL(1, sort(vetor2, 20, On2, 1));
   TEST_ASSERT_EQUAL(1, sort(vetor2, 20, Onlogn, 1));
-  //TEST_ASSERT_EQUAL(0, sort(vetor3, 20, On, 1));
-  //TEST_ASSERT_EQUAL(1, sort(vetor3, 20, On2, 1));
-  //TEST_ASSERT_EQUAL(1, sort(vetor3, 20, Onlogn, 1));
+  TEST_ASSERT_EQUAL(0, sort(vetor3, 20, On, 1));
+  TEST_ASSERT_EQUAL(1, sort(vetor3, 20, On2, 1));
+  TEST_ASSERT_EQUAL(1, sort(vetor3, 20, Onlogn, 1));
   //TEST_ASSERT_EQUAL(0, sort(vetor4, 20, On, 1));
   //TEST_ASSERT_EQUAL(1, sort(vetor4, 20, On2, 1));
   //TEST_ASSERT_EQUAL(1, sort(vetor4, 20, Onlogn, 1));
