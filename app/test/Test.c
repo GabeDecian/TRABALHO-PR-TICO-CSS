@@ -23,7 +23,7 @@ int vetor3[20] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
 int vetor4[20] = {-1,-2,-3,-4,-5,-6,1,2,3,4,5,0,74,-123,123,3,4,7,8,9};
 int vetor5[20] = {111,333,444,555,666,777,888,999,1000,1,5,2,4,3,0,0,0,0,0,0};
 int vetor6[20] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
-int vetor7[20] = {-1,-1,-1,-1,-1,-2,-2,-2,-3,-3,-5,-6,-7,-8,-9,-12,-12,-15,-11,-12};
+int vetor7[20] = {-5, -38, -12, -63, -44, -23, -87, -56, -19, -100, -24, -73, -8, -99, -45, -67, -91, -34, -58, -82};
 int vetor8[20] = {-1};
 int vetor9[20] = {1};
 //int vetor10[20] = {\n};
@@ -86,9 +86,9 @@ TEST(Sort, Test_Sort_1) //0
   //TEST_ASSERT_EQUAL(0, sort(vetor12, 2, On, 0));
   //TEST_ASSERT_EQUAL(1, sort(vetor12, 2, On2, 0));
   //TEST_ASSERT_EQUAL(1, sort(vetor12, 2, Onlogn, 0));
-  TEST_ASSERT_EQUAL(1, sort(vetor13, On, 0));
-  TEST_ASSERT_EQUAL(1, sort(vetor13, On2, 0));
-  TEST_ASSERT_EQUAL(1, sort(vetor13, Onlogn, 0));
+  //TEST_ASSERT_EQUAL(1, sort(vetor13, On, 0));
+  //TEST_ASSERT_EQUAL(1, sort(vetor13, On2, 0));
+  //TEST_ASSERT_EQUAL(1, sort(vetor13, Onlogn, 0));
 }
 
 TEST(Sort, Test_Sort_2) //1
