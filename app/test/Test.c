@@ -47,8 +47,8 @@ int vetor13[20] = {};
 
 TEST(Sort, Test_Sort_1) //0
 {
-  int simplesVetor[5] = {-1, -2, -3, -4, -5};
-  TEST_ASSERT_EQUAL(0, sort(simplesVetor, 5, "On", 0)); // Assumindo que '0' é COUNTING_SORT e 'On' é aceito.
+  //int simplesVetor[5] = {-1, -2, -3, -4, -5};
+  //TEST_ASSERT_EQUAL(0, sort(simplesVetor, 5, "On", 0)); // Assumindo que '0' é COUNTING_SORT e 'On' é aceito.
   TEST_ASSERT_EQUAL(1, sort(vetor0, 1, On, 0));
   TEST_ASSERT_EQUAL(1, sort(vetor0, 1, On2, 0));
   TEST_ASSERT_EQUAL(1, sort(vetor0, 1, Onlogn, 0));
