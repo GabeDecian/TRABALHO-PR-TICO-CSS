@@ -44,10 +44,9 @@ CFLAGS += -Wold-style-definition
 
 TARGET_BASE1=all_tests.out
 TARGET1 = $(TARGET_BASE1)$(TARGET_EXTENSION)
-SRC_FILES1=\
+SRC_FILES=\
   $(UNITY_ROOT)/src/unity.c \
   $(UNITY_ROOT)/extras/fixture/src/unity_fixture.c \
-  src/sort.c \
   src/bubble_sort.c \
   src/counting_sort.c \
   src/heap_sort.c \
@@ -56,9 +55,11 @@ SRC_FILES1=\
   src/quick_sort.c \
   src/radix_sort.c \
   src/selection_sort.c \
+  src/sort.c \
   test/Test.c \
   test/test_runners/Test_Runner.c \
   test/test_runners/all_tests.c
+  
 INC_DIRS=-Isrc -I$(UNITY_ROOT)/src -I$(UNITY_ROOT)/extras/fixture/src
 SYMBOLS=
 
