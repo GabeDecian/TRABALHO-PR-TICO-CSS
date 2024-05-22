@@ -66,28 +66,28 @@ SYMBOLS=
 all: clean compile run
 
 compile:
-	$(C_COMPILER) $(CFLAGS) $(INC_DIRS) $(SYMBOLS) $(SRC_FILES1) -o $(TARGET1)
+	$(C_COMPILER) $(CFLAGS) $(INC_DIRS) $(SYMBOLS) $(SRC_FILES) -o $(TARGET)
 
 run:
-	- ./$(TARGET1) -v
+	- ./$(TARGET) -v
 
 clean:
-	$(CLEANUP) $(TARGET1)
+	$(CLEANUP) $(TARGET)
 
 cppcheck:
 	cppcheck --enable=all --suppress=missingIncludeSystem --suppress=unusedFunction $(INC_DIRS) src/sort.c
 
 valgrind:
-	$(C_COMPILER) -g -Wall -Wfatal-errors $(INC_DIRS) $(SRC_FILES1) -o $(TARGET1)
-	valgrind --leak-check=full --show-leak-kinds=all ./$(TARGET1) -v
+	$(C_COMPILER) -g -Wall -Wfatal-errors $(INC_DIRS) $(SRC_FILES) -o $(TARGET)
+	valgrind --leak-check=full --show-leak-kinds=all ./$(TARGET) -v
 
 sanitizer:
-	$(C_COMPILER) -g -Wall -Wfatal-errors -fsanitize=address $(INC_DIRS) $(SRC_FILES1) -o $(TARGET1)
-	./$(TARGET1) -v
+	$(C_COMPILER) -g -Wall -Wfatal-errors -fsanitize=address $(INC_DIRS) $(SRC_FILES) -o $(TARGET)
+	./$(TARGET) -v
 
 cov:
-	$(C_COMPILER) $(CFLAGS) -fprofile-arcs -ftest-coverage $(INC_DIRS) $(SRC_FILES1) -o $(TARGET1)
-	./$(TARGET1) -v
+	$(C_COMPILER) $(CFLAGS) -fprofile-arcs -ftest-coverage $(INC_DIRS) $(SRC_FILES) -o $(TARGET)
+	./$(TARGET) -v
 	gcov -b sort.c
 
 ci: CFLAGS += -Werror
