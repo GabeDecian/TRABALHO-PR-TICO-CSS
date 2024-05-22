@@ -111,30 +111,30 @@ TEST(Sort, Test_Sort_2) //1
   TEST_ASSERT_EQUAL(0, sort(vetor5, 20, On, 1));
   TEST_ASSERT_EQUAL(1, sort(vetor5, 20, On2, 1));
   TEST_ASSERT_EQUAL(1, sort(vetor5, 20, Onlogn, 1));
-  //TEST_ASSERT_EQUAL(0, sort(vetor6, 20, On, 1));
-  //TEST_ASSERT_EQUAL(1, sort(vetor6, 20, On2, 1));
-  //TEST_ASSERT_EQUAL(1, sort(vetor6, 20, Onlogn, 1));
+  TEST_ASSERT_EQUAL(0, sort(vetor6, 20, On, 1));
+  TEST_ASSERT_EQUAL(1, sort(vetor6, 20, On2, 1));
+  TEST_ASSERT_EQUAL(1, sort(vetor6, 20, Onlogn, 1));
   //TEST_ASSERT_EQUAL(0, sort(vetor7, 20, On, 1));
   //TEST_ASSERT_EQUAL(1, sort(vetor7, 20, On2, 1));
   //TEST_ASSERT_EQUAL(1, sort(vetor7, 20, Onlogn, 1));
-  //TEST_ASSERT_EQUAL(1, sort(vetor8, 1, On, 1));
-  //TEST_ASSERT_EQUAL(1, sort(vetor8, 1, On2, 1));
-  //TEST_ASSERT_EQUAL(1, sort(vetor8, 1, Onlogn, 1));
-  //TEST_ASSERT_EQUAL(1, sort(vetor9, 1, On, 1));
-  //TEST_ASSERT_EQUAL(1, sort(vetor9, 1, On2, 1));
-  //TEST_ASSERT_EQUAL(1, sort(vetor9, 1, Onlogn, 1));
-  ////TEST_ASSERT_EQUAL(1, sort(*vetor10, 1, On, 1));
-  ////TEST_ASSERT_EQUAL(1, sort(*vetor10, 1, On2, 1));
-  ////TEST_ASSERT_EQUAL(1, sort(*vetor10, 1, Onlogn, 1));
-  //TEST_ASSERT_EQUAL(0, sort(vetor11, 2, On, 1));
-  //TEST_ASSERT_EQUAL(1, sort(vetor11, 2, On2, 1));
-  //TEST_ASSERT_EQUAL(1, sort(vetor11, 2, Onlogn, 1));
+  TEST_ASSERT_EQUAL(1, sort(vetor8, 1, On, 1));
+  TEST_ASSERT_EQUAL(1, sort(vetor8, 1, On2, 1));
+  TEST_ASSERT_EQUAL(1, sort(vetor8, 1, Onlogn, 1));
+  TEST_ASSERT_EQUAL(1, sort(vetor9, 1, On, 1));
+  TEST_ASSERT_EQUAL(1, sort(vetor9, 1, On2, 1));
+  TEST_ASSERT_EQUAL(1, sort(vetor9, 1, Onlogn, 1));
+  //TEST_ASSERT_EQUAL(1, sort(*vetor10, 1, On, 1));
+  //TEST_ASSERT_EQUAL(1, sort(*vetor10, 1, On2, 1));
+  //TEST_ASSERT_EQUAL(1, sort(*vetor10, 1, Onlogn, 1));
+  TEST_ASSERT_EQUAL(0, sort(vetor11, 2, On, 1));
+  TEST_ASSERT_EQUAL(1, sort(vetor11, 2, On2, 1));
+  TEST_ASSERT_EQUAL(1, sort(vetor11, 2, Onlogn, 1));
   //TEST_ASSERT_EQUAL(0, sort(vetor12, 2, On, 1));
   //TEST_ASSERT_EQUAL(1, sort(vetor12, 2, On2, 1));
   //TEST_ASSERT_EQUAL(1, sort(vetor12, 2, Onlogn, 1));
-  ////TEST_ASSERT_EQUAL(1, sort(vetor13, On, 1));
-  ////TEST_ASSERT_EQUAL(1, sort(vetor13, On2, 1));
-  ////TEST_ASSERT_EQUAL(1, sort(vetor13, Onlogn, 1));
+  //TEST_ASSERT_EQUAL(1, sort(vetor13, On, 1));
+  //TEST_ASSERT_EQUAL(1, sort(vetor13, On2, 1));
+  //TEST_ASSERT_EQUAL(1, sort(vetor13, Onlogn, 1));
 }
 
 TEST(Sort, Test_Sort_3) //2
