@@ -1,3 +1,5 @@
+# Author: Rafael Garibotti
+
 GCC_COMPILER=gcc
 CLANG_COMPILER=clang
 
@@ -18,11 +20,10 @@ CFLAGS += -Wstrict-prototypes
 CFLAGS += -Wundef
 CFLAGS += -Wold-style-definition
 
-TARGET = all_tests
+TARGET = all_tests.out
 SRC_FILES=\
   $(UNITY_ROOT)/src/unity.c \
   $(UNITY_ROOT)/extras/fixture/src/unity_fixture.c \
-  src/sort.c \
   src/bubble_sort.c \
   src/counting_sort.c \
   src/heap_sort.c \
@@ -31,6 +32,7 @@ SRC_FILES=\
   src/quick_sort.c \
   src/radix_sort.c \
   src/selection_sort.c \
+  src/sort.c \
   test/Test.c \
   test/test_runners/Test_Runner.c \
   test/test_runners/all_tests.c
@@ -40,12 +42,6 @@ all: clean compile run
 
 compile:
 	$(GCC_COMPILER) $(CFLAGS) $(INC_DIRS) $(SRC_FILES) -o $(TARGET)
-
-run:
-	./$(TARGET) -v
-
-clean:
-	$(CLEANUP) $(TARGET)
 
 cppcheck:
 	cppcheck --enable=all --suppress=missingIncludeSystem --suppress=unusedFunction $(INC_DIRS) src/sort.c
@@ -59,10 +55,12 @@ sanitizer:
 	./$(TARGET) -v
 
 cov:
-	$(C_COMPILER) $(CFLAGS) -fprofile-arcs -ftest-coverage $(INC_DIRS) $(SRC_FILES) -o $(TARGET)
+	$(GCC_COMPILER) $(CFLAGS) -fprofile-arcs -ftest-coverage $(INC_DIRS) $(SRC_FILES) -o $(TARGET)
 	./$(TARGET) -v
-	@echo $(wildcard *.gcda)
-	gcov -b $(filter-out ../../src/unity.c ../../extras/fixture/src/unity_fixture.c,$(wildcard *.gcda))
+	gcov -b sort.c
 
-ci: CFLAGS += -Werror
-ci: compile
+run:
+	./$(TARGET) -v
+
+clean:
+	rm -fr $(TARGET) *.gcno *.gcda *.gcov *.dSYM 
