@@ -56,8 +56,8 @@ SRC_FILES1=\
   src/quick_sort.c \
   src/radix_sort.c \
   src/selection_sort.c \
-  test/TestSort.c \
-  test/test_runners/TestSort_Runner.c \
+  test/Test.c \
+  test/test_runners/Test_Runner.c \
   test/test_runners/all_tests.c
 INC_DIRS=-Isrc -I$(UNITY_ROOT)/src -I$(UNITY_ROOT)/extras/fixture/src
 SYMBOLS=
