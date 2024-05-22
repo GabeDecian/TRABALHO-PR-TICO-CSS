@@ -1,31 +1,9 @@
-# ==========================================
-#   Unity Project - A Test Framework for C
-#   Copyright (c) 2007 Mike Karlesky, Mark VanderVoord, Greg Williams
-#   [Released under MIT License. Please refer to license.txt for details]
-# ==========================================
+# Author: Rafael Garibotti
 
-#We try to detect the OS we are running on, and adjust commands as needed
-ifeq ($(OS),Windows_NT)
-  ifeq ($(shell uname -s),) # not in a bash-like shell
-	CLEANUP = del /F /Q
-	MKDIR = mkdir
-  else # in a bash-like shell, like msys
-	CLEANUP = rm -f
-	MKDIR = mkdir -p
-  endif
-	TARGET_EXTENSION=.exe
-else
-	CLEANUP = rm -f
-	MKDIR = mkdir -p
-	TARGET_EXTENSION=.out
-endif
+GCC_COMPILER=gcc
+CLANG_COMPILER=clang
 
-C_COMPILER=gcc
-ifeq ($(shell uname -s), Darwin)
-C_COMPILER=clang
-endif
-
-UNITY_ROOT=../..
+UNITY_ROOT=../Unity
 
 CFLAGS=-std=c99
 CFLAGS += -Wall
@@ -42,8 +20,7 @@ CFLAGS += -Wstrict-prototypes
 CFLAGS += -Wundef
 CFLAGS += -Wold-style-definition
 
-TARGET_BASE=all_tests.out
-TARGET = $(TARGET_BASE)$(TARGET_EXTENSION)
+TARGET = all_tests.out
 SRC_FILES=\
   $(UNITY_ROOT)/src/unity.c \
   $(UNITY_ROOT)/extras/fixture/src/unity_fixture.c \
@@ -59,36 +36,31 @@ SRC_FILES=\
   test/Test.c \
   test/test_runners/Test_Runner.c \
   test/test_runners/all_tests.c
-  
 INC_DIRS=-Isrc -I$(UNITY_ROOT)/src -I$(UNITY_ROOT)/extras/fixture/src
-SYMBOLS=
 
 all: clean compile run
 
 compile:
-	$(C_COMPILER) $(CFLAGS) $(INC_DIRS) $(SYMBOLS) $(SRC_FILES) -o $(TARGET)
-
-run:
-	- ./$(TARGET) -v
-
-clean:
-	$(CLEANUP) $(TARGET)
+	$(GCC_COMPILER) $(CFLAGS) $(INC_DIRS) $(SRC_FILES) -o $(TARGET)
 
 cppcheck:
 	cppcheck --enable=all --suppress=missingIncludeSystem --suppress=unusedFunction $(INC_DIRS) src/sort.c
 
 valgrind:
-	$(C_COMPILER) -g -Wall -Wfatal-errors $(INC_DIRS) $(SRC_FILES) -o $(TARGET)
+	$(GCC_COMPILER) -g -Wall -Wfatal-errors $(INC_DIRS) $(SRC_FILES) -o $(TARGET)
 	valgrind --leak-check=full --show-leak-kinds=all ./$(TARGET) -v
 
 sanitizer:
-	$(C_COMPILER) -g -Wall -Wfatal-errors -fsanitize=address $(INC_DIRS) $(SRC_FILES) -o $(TARGET)
+	$(GCC_COMPILER) -g -Wall -Wfatal-errors -fsanitize=address $(INC_DIRS) $(SRC_FILES) -o $(TARGET)
 	./$(TARGET) -v
 
 cov:
-	$(C_COMPILER) $(CFLAGS) -fprofile-arcs -ftest-coverage $(INC_DIRS) $(SRC_FILES) -o $(TARGET)
+	$(GCC_COMPILER) $(CFLAGS) -fprofile-arcs -ftest-coverage $(INC_DIRS) $(SRC_FILES) -o $(TARGET)
 	./$(TARGET) -v
 	gcov -b sort.c
 
-ci: CFLAGS += -Werror
-ci: compile
+run:
+	./$(TARGET) -v
+
+clean:
+	rm -fr $(TARGET) *.gcno *.gcda *.gcov *.dSYM 
