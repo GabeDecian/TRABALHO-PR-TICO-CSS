@@ -83,12 +83,12 @@ TEST(Sort, Test_Sort_1) //0
   TEST_ASSERT_EQUAL(0, sort(vetor11, 2, On, 0));
   TEST_ASSERT_EQUAL(1, sort(vetor11, 2, On2, 0));
   TEST_ASSERT_EQUAL(1, sort(vetor11, 2, Onlogn, 0));
-  //TEST_ASSERT_EQUAL(0, sort(vetor12, 2, On, 0));
-  //TEST_ASSERT_EQUAL(1, sort(vetor12, 2, On2, 0));
-  //TEST_ASSERT_EQUAL(1, sort(vetor12, 2, Onlogn, 0));
-  ////TEST_ASSERT_EQUAL(1, sort(vetor13, On, 0));
-  ////TEST_ASSERT_EQUAL(1, sort(vetor13, On2, 0));
-  ////TEST_ASSERT_EQUAL(1, sort(vetor13, Onlogn, 0));
+  TEST_ASSERT_EQUAL(0, sort(vetor12, 2, On, 0));
+  TEST_ASSERT_EQUAL(1, sort(vetor12, 2, On2, 0));
+  TEST_ASSERT_EQUAL(1, sort(vetor12, 2, Onlogn, 0));
+  TEST_ASSERT_EQUAL(1, sort(vetor13, On, 0));
+  TEST_ASSERT_EQUAL(1, sort(vetor13, On2, 0));
+  TEST_ASSERT_EQUAL(1, sort(vetor13, Onlogn, 0));
 }
 
 TEST(Sort, Test_Sort_2) //1
