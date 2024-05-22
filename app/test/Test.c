@@ -74,9 +74,9 @@ TEST(Sort, Test_Sort_1) //0
   TEST_ASSERT_EQUAL(1, sort(vetor8, 1, On, 0));
   TEST_ASSERT_EQUAL(1, sort(vetor8, 1, On2, 0));
   TEST_ASSERT_EQUAL(1, sort(vetor8, 1, Onlogn, 0));
-  //TEST_ASSERT_EQUAL(1, sort(vetor9, 1, On, 0));
-  //TEST_ASSERT_EQUAL(1, sort(vetor9, 1, On2, 0));
-  //TEST_ASSERT_EQUAL(1, sort(vetor9, 1, Onlogn, 0));
+  TEST_ASSERT_EQUAL(1, sort(vetor9, 1, On, 0));
+  TEST_ASSERT_EQUAL(1, sort(vetor9, 1, On2, 0));
+  TEST_ASSERT_EQUAL(1, sort(vetor9, 1, Onlogn, 0));
   ////TEST_ASSERT_EQUAL(1, sort(vetor10, 1, On, 0));
   ////TEST_ASSERT_EQUAL(1, sort(vetor10, 1, On2, 0));
   ////TEST_ASSERT_EQUAL(1, sort(vetor10, 1, Onlogn, 0));
