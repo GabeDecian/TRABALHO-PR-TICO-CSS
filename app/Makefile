@@ -42,8 +42,8 @@ CFLAGS += -Wstrict-prototypes
 CFLAGS += -Wundef
 CFLAGS += -Wold-style-definition
 
-TARGET_BASE1=all_tests
-TARGET1 = $(TARGET_BASE1)$(TARGET_EXTENSION)
+TARGET_BASE=all_tests.out
+TARGET = $(TARGET_BASE)$(TARGET_EXTENSION)
 SRC_FILES=\
   $(UNITY_ROOT)/src/unity.c \
   $(UNITY_ROOT)/extras/fixture/src/unity_fixture.c \
