@@ -50,9 +50,9 @@ TEST(Sort, Test_Sort_1) //0
   TEST_ASSERT_EQUAL(1, sort(vetor0, 1, On, 0));
   TEST_ASSERT_EQUAL(1, sort(vetor0, 1, On2, 0));
   TEST_ASSERT_EQUAL(1, sort(vetor0, 1, Onlogn, 0));
-  ////TEST_ASSERT_EQUAL(1, sort(vetor1, 24, On, 0));
-  ////TEST_ASSERT_EQUAL(1, sort(vetor1, 24, On2, 0));
-  ////TEST_ASSERT_EQUAL(1, sort(vetor1, 24, Onlogn, 0));
+  TEST_ASSERT_EQUAL(1, sort(vetor1, 24, On, 0));
+  TEST_ASSERT_EQUAL(1, sort(vetor1, 24, On2, 0));
+  TEST_ASSERT_EQUAL(1, sort(vetor1, 24, Onlogn, 0));
   //TEST_ASSERT_EQUAL(0, sort(vetor2, 20, On, 0));
   //TEST_ASSERT_EQUAL(1, sort(vetor2, 20, On2, 0));
   //TEST_ASSERT_EQUAL(1, sort(vetor2, 20, Onlogn, 0));
