@@ -1,5 +1,3 @@
-# Author: Rafael Garibotti
-
 GCC_COMPILER=gcc
 CLANG_COMPILER=clang
 
@@ -20,7 +18,7 @@ CFLAGS += -Wstrict-prototypes
 CFLAGS += -Wundef
 CFLAGS += -Wold-style-definition
 
-TARGET = all_tests.out
+TARGET = all_tests
 SRC_FILES=\
   $(UNITY_ROOT)/src/unity.c \
   $(UNITY_ROOT)/extras/fixture/src/unity_fixture.c \
