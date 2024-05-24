@@ -42,6 +42,12 @@ all: clean compile run
 
 compile:
 	$(GCC_COMPILER) $(CFLAGS) $(INC_DIRS) $(SRC_FILES) -o $(TARGET)
+	
+run:
+	./$(TARGET) -v
+
+clean:
+	rm -fr $(TARGET) *.gcno *.gcda *.gcov *.dSYM 
 
 cppcheck:
 	cppcheck --enable=all --suppress=missingIncludeSystem --suppress=unusedFunction $(INC_DIRS) src/sort.c
@@ -57,10 +63,8 @@ sanitizer:
 cov:
 	$(GCC_COMPILER) $(CFLAGS) -fprofile-arcs -ftest-coverage $(INC_DIRS) $(SRC_FILES) -o $(TARGET)
 	./$(TARGET) -v
+	@echo $(wildcard *.gcda)
 	gcov -b sort.c
 
-run:
-	./$(TARGET) -v
-
-clean:
-	rm -fr $(TARGET) *.gcno *.gcda *.gcov *.dSYM 
+ci: CFLAGS += -Werror
+ci: compile
