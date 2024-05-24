@@ -64,7 +64,7 @@ cov:
 	$(GCC_COMPILER) $(CFLAGS) -fprofile-arcs -ftest-coverage $(INC_DIRS) $(SRC_FILES) -o $(TARGET)
 	./$(TARGET) -v
 	@echo $(wildcard *.gcda)
-	gcov -b sort.c
+	gcov -b $(filter-out ../../src/unity.c ../../extras/fixture/src/unity_fixture.c,$(wildcard *.gcda))
 
 ci: CFLAGS += -Werror
 ci: compile
